@@ -40,6 +40,7 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
+    'nuxt-svg-loader',
     '@nuxtjs/axios',
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',

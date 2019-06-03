@@ -1,7 +1,7 @@
 <template lang="html">
     <transition name="fade">
         <div class="loading-page" v-if="loading">
-            <img src="@/assets/infinity-5s-200px.svg"/>
+            <VueLoader />
             <transition name="fade">
                 <h2 v-if="message">{{message}}...</h2>
             </transition>
@@ -11,9 +11,14 @@
 
 <script>
 
+    import VueLoader from '@/assets/Infinity-5s-200px.svg';
     import list from '@/assets/loading';
 
     export default {
+        components: {
+
+            VueLoader,
+        },
         data: () => ({
 
             loading: true,
