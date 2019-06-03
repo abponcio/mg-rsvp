@@ -31,3 +31,7 @@ $family-primary: 'Cormorant Garamond', 'Pinyon Script', 'Adora Bouton';
 // Import Bulma and Buefy styles
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
+
+.button {
+    border-radius: 0;
+}

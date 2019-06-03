@@ -58,22 +58,48 @@
                 <transition name="fade">
                     <div class="hero is-light is-bold is-fullheight">
                         <div class="hero-body">
-                            <div class="container has-text-centered">
+                            <div class="container has-text-centered" v-if="guest.attending === undefined">
                                 <h1 class="title">
                                     Confirm your attendance
                                 </h1>
                                 <h2 class="subtitle button-section">
-                                    <span class="control">
-                                        <button class="button is-light" @click="confirmAttendance(false)">
-                                            I can't attend
-                                        </button>
-                                    </span>
-                                    <span class="control">
-                                        <button class="button is-dark" @click="confirmAttendance(true)">
-                                            I'm going
-                                        </button>
-                                    </span>
+                                    You can still have a chance to change your mind
                                 </h2>
+                                <span class="control">
+                                    <button class="button is-dark is-outlined" @click="confirmAttendance(false)">
+                                        I can't attend
+                                    </button>
+                                </span>
+                                <span class="control">
+                                    <button class="button is-dark" @click="confirmAttendance(true)">
+                                        I'm going
+                                    </button>
+                                </span>
+                            </div>
+                            <div class="container has-text-centered" v-else>
+                                <div v-if="guest.attending">
+                                    <h1 class="title">
+                                        You have confirmed on attending
+                                    </h1>
+                                    <h2 class="subtitle button-section">
+                                        Something came up?
+                                    </h2>
+                                    <button class="button is-dark" @click="confirmAttendance(false)">
+                                        Sorry, I can't attend
+                                    </button>
+                                </div>
+                                <div v-else>
+                                    <h1 class="title">
+                                        Declined on attending
+                                    </h1>
+                                    <h2 class="subtitle button-section">
+                                        You can still change your mind
+                                    </h2>
+                                    <button class="button is-dark" @click="confirmAttendance(true)">
+                                        I'm going
+                                    </button>
+                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -86,9 +112,6 @@
                 <div class="card-content">
                     <div class="content">
                         <h1>Thank you for accepting our invitation</h1>
-                        <a>#css</a> <a>#responsive</a>
-                        <br>
-                        <small>11:09 PM - 1 Jan 2016</small>
                     </div>
                 </div>
             </div>
@@ -99,9 +122,6 @@
                 <div class="card-content">
                     <div class="content">
                         Sad to hear that you won't make it.
-                        <a>#css</a> <a>#responsive</a>
-                        <br>
-                        <small>11:09 PM - 1 Jan 2016</small>
                     </div>
                 </div>
             </div>
@@ -117,39 +137,37 @@
     import {FullPage} from 'vue-fullpage.js';
 
     export default {
-        async asyncData(route) {
+        async asyncData({params, redirect}) {
             const {data} = await $axios.get('https://wedding-rsvp-9bf28.firebaseio.com/guests.json');
+            const index = data.findIndex(g => g.id === params.id);
 
-            return {guests: data};
+            if (index < 0) redirect('/');
+
+            return {guest: data[index], index};
         },
         computed: {
 
             attending() {
 
-                return this.guest.attending || false;
+                return this.guest.attending;
             },
             name() {
 
                 return this.guest.name || '';
             },
-            guest() {
-
-                return this.guests[this.index] || {};
-            },
-            index() {
-
-                return this.guests.findIndex(g => g.id === this.$route.params.id);
-            }
         },
         data() {
+
             return {
+
+                index: null,
                 isConfirmed: false,
                 isDeclined: false,
                 options: {
                     menu: '#menu',
                     anchors: ['welcome', 'venue', 'attire', 'confirmation'],
                 },
-                guests: [],
+                guest: null,
             }
         },
         components: {

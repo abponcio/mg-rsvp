@@ -3,7 +3,7 @@
     <full-page ref="fullpage" id="fullpage" :options="options">
         <section class="section">
             <transition name="fade">
-                <div class="hero is-primary is-bold is-fullheight">
+                <div class="hero is-light is-bold is-fullheight">
                     <div class="hero-body">
                         <div class="container has-text-centered">
                             <h1 class="title">
