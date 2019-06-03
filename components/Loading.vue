@@ -1,6 +1,7 @@
 <template lang="html">
     <transition name="fade">
         <div class="loading-page" v-if="loading">
+            <img src="@/assets/infinity-5s-200px.svg"/>
             <transition name="fade">
                 <h2 v-if="message">{{message}}...</h2>
             </transition>
