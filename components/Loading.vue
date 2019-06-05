@@ -1,7 +1,7 @@
 <template lang="html">
     <transition name="fade">
         <div class="loading-page" v-if="loading">
-            <VueLoader />
+            <img src="@/assets/Infinity-5s-200px.svg" alt="Infinity"/>
             <transition name="fade">
                 <h2 v-if="message">{{message}}...</h2>
             </transition>
@@ -11,39 +11,37 @@
 
 <script>
 
-    import VueLoader from '@/assets/Infinity-5s-200px.svg';
     import list from '@/assets/loading';
 
     export default {
-        components: {
 
-            VueLoader,
-        },
         data: () => ({
 
             loading: true,
             message: '',
         }),
         methods: {
-            finish () {
+            finish() {
 
                 this.loading = false;
             },
-            start () {
+            start() {
 
                 this.loading = true;
             },
         },
         mounted() {
 
-            const changeMessage = setInterval(() => this.message = list[Math.floor(Math.random() * list.length)], 1000);
-
-            setTimeout(() => {
-
-                this.finish();
-                clearInterval(changeMessage);
-            }, 5000);
+            window.loadInterval = setInterval(() => this.message = list[Math.floor(Math.random() * list.length)], 1000);
+            setTimeout(() => this.finish(), 5000);
         },
+        watch: {
+
+            loading() {
+
+                if (!this.loading) clearInterval(window.loadInterval);
+            }
+        }
     };
 
 </script>
@@ -55,7 +53,8 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: #aaaaaa;
+        background-color: #fff;
+        background-image: url(~assets/lightpaperfibers.png);
         text-align: center;
         padding-top: 200px;
         font-size: 30px;
@@ -65,6 +64,6 @@
 
     h2 {
         font-family: 'Cormorant Garamond';
-        color: #fff;
+        color: #363636;
     }
 </style>

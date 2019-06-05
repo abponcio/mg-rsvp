@@ -15,7 +15,7 @@ $colors: (
     "dark": ($dark, $dark-invert),
     "primary": ($primary, $primary-invert),
     "info": ($info, $info-invert),
-    "success": ($success, $success-invert),
+    "success": (#3d7a44, findColorInvert(#3d7a44)),
     "warning": ($warning, $warning-invert),
     "danger": ($danger, $danger-invert),
     "twitter": ($twitter, $twitter-invert)
@@ -33,5 +33,5 @@ $family-primary: 'Cormorant Garamond', 'Pinyon Script', 'Adora Bouton';
 @import "~buefy/src/scss/buefy";
 
 .button {
-    border-radius: 0;
+    border-radius: 20px;
 }

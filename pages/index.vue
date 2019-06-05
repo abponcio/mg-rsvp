@@ -10,7 +10,7 @@
                                 Welcome
                             </h1>
                             <h2 class="subtitle">
-                                Landing site for none users
+                                I wish we could invite more but space is quite limited for everyone
                             </h2>
                         </div>
                     </div>

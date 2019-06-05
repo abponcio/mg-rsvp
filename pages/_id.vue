@@ -1,18 +1,38 @@
 <template>
 
-    <div>
+    <div :class="{'is-hidden': this.$nuxt.$loading.loading}">
         <full-page ref="fullpage" id="fullpage" :options="options">
-            <section class="section">
+            <section class="section is-relative">
+                <img class="bottom-leaves" src="@/assets/home/top-left-below-leaves.png" alt="Bottom Leaves"/>
+                <img class="top-leaves" src="@/assets/home/top-left-above-leaves.png" alt="Top Leaves"/>
+                <img class="left-splatter" src="@/assets/home/left-splatter.png" alt="Left Splatter"/>
+                <img class="top-splatter" src="@/assets/home/top-splatter.png" alt="Top Splatter"/>
+                <img class="top-right-leaves" src="@/assets/home/top-right-leaves.png" alt="Top Right Leaves"/>
+                <img class="right-leaves" src="@/assets/home/right-leaves.png" alt="Right Leaves"/>
+                <img class="bottom-left-leaves" src="@/assets/home/bottom-left-leaves.png" alt="Bottom Left Leaves"/>
                 <transition name="fade">
-                    <div class="hero is-white is-bold is-fullheight">
+                    <div class="hero is-bold is-fullheight">
                         <div class="hero-body">
                             <div class="container has-text-centered">
-                                <h1 class="title">
+                                <h2 class="subtitle">
                                     Hello, {{name}}
-                                </h1>
-                                <h2 class="subtitle">
-                                    You are invited at Grace and Mico's private lunch.
                                 </h2>
+                                <h2 class="subtitle">
+                                    We, 
+                                </h2>
+                                <h1 class="title">
+                                    Mico & Grace
+                                </h1>
+                                <h3 class="subtitle">
+                                    Invite you to a private gathering to celebrate our love
+                                </h3>
+                                <h3 class="subtitle">
+                                    December 00.2019 | 0:00 pm <br/>
+                                    Lazat Fil-Asian Restaurant <br/>
+                                    76 Scout Limbaga St. Tomas Morato, Quezon City
+                                </h3>
+
+                                <a class="button is-success is-outlined" style="max-width: 100%; width: 260px;" href="#rsvp">RSVP</a>
                             </div>
                         </div>
                     </div>
@@ -20,27 +40,7 @@
             </section>
             <section class="section">
                 <transition name="fade">
-                    <div class="hero is-white is-bold is-fullheight">
-                        <div class="hero-body">
-                            <div class="container has-text-centered">
-                                <h1 class="title">
-                                    THE VENUE
-                                </h1>
-                                <hr>
-                                <h1 class="title">
-                                    We reserved one seat for you
-                                </h1>
-                                <h2 class="subtitle">
-                                    Join us at at HCG. The event starts at 12:00 PM on December 16, 2019
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                </transition>
-            </section>
-            <section class="section">
-                <transition name="fade">
-                    <div class="hero is-light is-bold is-fullheight">
+                    <div class="hero is-bold is-fullheight">
                         <div class="hero-body">
                             <div class="container has-text-centered">
                                 <h1 class="title">
@@ -56,7 +56,7 @@
             </section>
             <section class="section">
                 <transition name="fade">
-                    <div class="hero is-light is-bold is-fullheight">
+                    <div class="hero is-bold is-fullheight">
                         <div class="hero-body">
                             <div class="container has-text-centered" v-if="guest.attending === undefined">
                                 <h1 class="title">
@@ -82,7 +82,7 @@
                                         You have confirmed on attending
                                     </h1>
                                     <h2 class="subtitle button-section">
-                                        Something came up?
+                                        Did something came up?
                                     </h2>
                                     <button class="button is-dark" @click="confirmAttendance(false)">
                                         Sorry, I can't attend
@@ -165,7 +165,7 @@
                 isDeclined: false,
                 options: {
                     menu: '#menu',
-                    anchors: ['welcome', 'venue', 'attire', 'confirmation'],
+                    anchors: ['hello', 'ootd', 'rsvp'],
                 },
                 guest: null,
             }
@@ -198,6 +198,54 @@
 <style scoped>
     .section {
         padding: 0;
+    }
+    #fullpage {
+        background-image: url(~assets/lightpaperfibers.png);
+    }
+    .container {
+        z-index: 5;
+    }
+    .bottom-leaves {
+        position: absolute;
+        top: -20px;
+        left: -70px;
+        z-index: 1;
+    }
+    .top-leaves {
+        position: absolute;
+        top: -62px;
+        left: -70px;
+        z-index: 2;
+    }
+    .left-splatter {
+        position: absolute;
+        top: -97px;
+        left: -556px;
+        z-index: 2;
+    }
+    .top-splatter {
+        position: absolute;
+        top: -328px;
+        left: 240px;
+        z-index: 2;
+    }
+    .bottom-left-leaves {
+        position: absolute;
+        bottom: 80px;
+        left: 40px;
+        z-index: 2;
+    }
+    .right-leaves {
+        position: absolute;
+        top: 250px;
+        right: 200px;
+        z-index: 2;
+    }
+    .top-right-leaves {
+        position: absolute;
+        top: 10px;
+        right: 360px;
+        z-index: 2;
     }
 </style>
 

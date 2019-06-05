@@ -40,12 +40,16 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    'nuxt-svg-loader',
+    '@bazzite/nuxt-optimized-images',
     '@nuxtjs/axios',
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
     '@nuxtjs/pwa',
   ],
+
+  optimizedImages: {
+    optimizeImages: true
+  },
 
   axios: {
     proxyHeaders: false,
@@ -69,5 +73,5 @@ export default {
         })
       }
     }
-  }
+  },
 }
