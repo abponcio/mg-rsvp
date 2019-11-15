@@ -1,4 +1,4 @@
-import pkg from './package'
+import pkg from './package';
 
 export default {
   mode: 'spa',
@@ -34,7 +34,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [{ src: "~/plugins/google-maps.client"}],
 
   /*
    ** Nuxt.js modules
@@ -72,6 +72,7 @@ export default {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+    transpile: [/^vue2-google-maps($|\/)/],
   },
 }

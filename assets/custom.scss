@@ -28,6 +28,12 @@ $link-focus-border: $primary;
 
 $family-primary: 'Cormorant Garamond', 'Pinyon Script', 'Adora Bouton';
 
+@font-face {
+
+    font-family: 'Paduka Script';
+    src: url('~assets/fonts/Paduka Script free.ttf');
+}
+
 // Import Bulma and Buefy styles
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
