@@ -14,7 +14,7 @@
                     <div class="hero is-bold is-fullheight">
                         <div class="hero-body">
                             <div class="container has-text-centered">
-                                <h2 class="subtitle">
+                                <h2 class="subtitle is-spaced">
                                     Hello,
                                 </h2>
                                 <h1 class="title big-title is-spaced">
