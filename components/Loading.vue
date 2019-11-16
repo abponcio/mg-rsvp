@@ -32,7 +32,7 @@
         },
         mounted() {
 
-            window.loadInterval = setInterval(() => this.message = list[Math.floor(Math.random() * list.length)], 1000);
+            window.loadInterval = setInterval(() => this.message = list[Math.ceil(Math.random() * list.length)], 1000);
             setTimeout(() => this.finish(), 5000);
         },
         watch: {
