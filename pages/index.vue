@@ -15,24 +15,21 @@
                         <div class="hero-body">
                             <div class="container has-text-centered">
                                 <h2 class="subtitle">
-                                    Hello, {{guest.name}}
+                                    Hello,
                                 </h2>
-                                <h2 class="subtitle mt-2">
-                                    We,
-                                </h2>
-                                <h1 class="title big-title">
+                                <h1 class="title big-title is-spaced">
                                     Mico & Grace
                                 </h1>
-                                <h3 class="subtitle smaller">
+                                <h3 class="subtitle smaller" style="margin-top: 1rem;">
                                     invites you to a private gathering to celebrate our love
                                 </h3>
                                 <h3 class="subtitle smaller">
-                                    December 23.2019 | 11:00 am <br/>
-                                    <a href="https://www.romulocafe.com/rc-quezoncity" target="_blank" class="has-text-link">Romulo Cafe Restaurant</a> <br/>
+                                    December 23, 2019 | 11:00 am <br/>
+                                    <strong>Romulo Cafe Restaurant</strong> <br/>
                                     32 Dr. Scout Lazcano corner Scout Tuason Tomas Morato, Quezon City
                                 </h3>
 
-                                <a class="button is-success is-outlined" style="max-width: 100%; width: 260px;" href="#map">Location</a>
+                                <a class="button is-success is-outlined" style="max-width: 100%; min-width: 260px; border-radius: 10px" href="#map">View map location</a>
                             </div>
                         </div>
                     </div>
@@ -52,22 +49,15 @@
                                 <h2 class="subtitle">
                                     White smart casual
                                 </h2>
-                                <div class="columns ootd-list" style="flex-wrap: wrap;">
-                                    <div class="column" @mouseover="showVideo1 = true" @mouseleave="showVideo1 = false">
-                                        <img src="@/assets/ootd/female1.jpeg" alt="female" v-if="!showVideo1" style="width: 100%; max-width: 400px;" />
-                                        <video v-if="showVideo1" style="width: 100%; max-width: 400px" autoplay loop>
-                                            <source src="@/assets/ootd/female1.mp4" type="video/mp4">
-                                            Your browser is not supported
-                                        </video>
-                                    </div>
-                                    <div class="column" @mouseover="showVideo2 = true" @mouseleave="showVideo2 = false">
+                                <div class="columns ootd-list" style="flex-wrap: wrap; justify-content: center;">
+                                    <div class="column is-4" @mouseover="showVideo2 = true" @mouseleave="showVideo2 = false">
                                         <img src="@/assets/ootd/men1.jpeg" alt="male" v-if="!showVideo2" style="width: 100%; max-width: 400px;" />
                                         <video v-if="showVideo2" style="width: 100%; max-width: 400px" autoplay loop>
                                             <source src="@/assets/ootd/men1.mp4" type="video/mp4">
                                             Your browser is not supported
                                         </video>
                                     </div>
-                                    <div class="column" @mouseover="showVideo3 = true" @mouseleave="showVideo3 = false">
+                                    <div class="column is-4" @mouseover="showVideo3 = true" @mouseleave="showVideo3 = false">
                                         <img src="@/assets/ootd/female2.jpeg" alt="female" v-if="!showVideo3" style="width: 100%; max-width: 400px;" />
                                         <video v-if="showVideo3" style="width: 100%; max-width: 400px" autoplay loop>
                                             <source src="@/assets/ootd/female2.mp4" type="video/mp4">
@@ -83,8 +73,8 @@
             <section class="section fp-auto-height-responsive">
                 <transition name="fade">
                     <div class="hero is-bold is-fullheight">
-                        <div class="hero-body">
-                            <div class="container has-text-centered">
+                        <div class="hero-body" style="padding: 0;">
+                            <div class="container is-fluid has-text-centered" style="margin: 0;">
                                 <h1 class="title">
                                     Location
                                 </h1>
@@ -95,7 +85,7 @@
                                     :center="{lat:14.6312494, lng:121.030342}"
                                     :zoom="18"
                                     map-type-id="terrain"
-                                    style="max-width: 90vw; height: 60vh; margin: 1rem auto 0 auto; align-items: center; justify-content: center; margin-top: 1rem;"
+                                    style="max-width: 100vw; height: 60vh; margin: 1rem auto 0 auto; align-items: center; justify-content: center; margin-top: 1rem;"
                                     class="is-flex"
                                     :options="mapOptions"
                                     >
@@ -416,7 +406,7 @@
     .big-title {
 
         font-family: 'Paduka Script';
-        font-size: 15rem;
+        font-size: 8rem;
         font-weight: 200;
     }
     .subtitle {
@@ -429,10 +419,10 @@
         margin-top: 1rem;
     }
     .subtitle.smaller {
-        font-size: 2rem;
+        font-size: 1.4rem;
     }
     .button {
-        font-size: 2rem;
+        font-size: 1.4rem;
     }
     .ootd-list {
         min-height: 550px;
