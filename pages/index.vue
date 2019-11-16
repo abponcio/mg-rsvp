@@ -52,24 +52,24 @@
                                 <h2 class="subtitle">
                                     White smart casual
                                 </h2>
-                                <div class="columns" style="flex-wrap: wrap">
-                                    <div class="column" @mouseover="showVideo1 = true" @mouseleave="showVideo1 = false" style="min-height: 550px;">
+                                <div class="columns ootd-list" style="flex-wrap: wrap;">
+                                    <div class="column" @mouseover="showVideo1 = true" @mouseleave="showVideo1 = false">
                                         <img src="@/assets/ootd/female1.jpeg" alt="female" v-if="!showVideo1" style="width: 100%; max-width: 400px;" />
-                                        <video v-if="showVideo1" style="width: 100%; max-width: 400px" autoplay>
+                                        <video v-if="showVideo1" style="width: 100%; max-width: 400px" autoplay loop>
                                             <source src="@/assets/ootd/female1.mp4" type="video/mp4">
                                             Your browser is not supported
                                         </video>
                                     </div>
-                                    <div class="column" @mouseover="showVideo2 = true" @mouseleave="showVideo2 = false" style="min-height: 550px;">
+                                    <div class="column" @mouseover="showVideo2 = true" @mouseleave="showVideo2 = false">
                                         <img src="@/assets/ootd/men1.jpeg" alt="male" v-if="!showVideo2" style="width: 100%; max-width: 400px;" />
-                                        <video v-if="showVideo2" style="width: 100%; max-width: 400px" autoplay>
+                                        <video v-if="showVideo2" style="width: 100%; max-width: 400px" autoplay loop>
                                             <source src="@/assets/ootd/men1.mp4" type="video/mp4">
                                             Your browser is not supported
                                         </video>
                                     </div>
-                                    <div class="column" @mouseover="showVideo3 = true" @mouseleave="showVideo3 = false" style="min-height: 550px;">
+                                    <div class="column" @mouseover="showVideo3 = true" @mouseleave="showVideo3 = false">
                                         <img src="@/assets/ootd/female2.jpeg" alt="female" v-if="!showVideo3" style="width: 100%; max-width: 400px;" />
-                                        <video v-if="showVideo3" style="width: 100%; max-width: 400px" autoplay>
+                                        <video v-if="showVideo3" style="width: 100%; max-width: 400px" autoplay loop>
                                             <source src="@/assets/ootd/female2.mp4" type="video/mp4">
                                             Your browser is not supported
                                         </video>
@@ -146,6 +146,8 @@
                     menu: '#menu',
                     anchors: ['hello', 'ootd', 'map'],
                     scrollOverflow: true,
+                    responsiveWidth: 768,
+                    lazyLoading: true,
                 },
                 showVideo1: false,
                 showVideo2: false,
@@ -432,7 +434,9 @@
     .button {
         font-size: 2rem;
     }
-
+    .ootd-list {
+        min-height: 550px;
+    }
     @media (max-width: 1410px) {
 
         .big-title {
