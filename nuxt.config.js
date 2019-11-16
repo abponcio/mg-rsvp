@@ -34,7 +34,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: "~/plugins/google-maps.client"}],
+  plugins: [
+    {src: "~/plugins/full-page.client"},
+    {src: "~/plugins/google-maps.client"},
+  ],
 
   /*
    ** Nuxt.js modules
@@ -45,6 +48,7 @@ export default {
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
     '@nuxtjs/pwa',
+    'nuxt-fullpage.js',
   ],
 
   optimizedImages: {

@@ -46,26 +46,33 @@
                                 <h1 class="title">
                                     #ootd
                                 </h1>
-                                <h2 class="subtitle normal">
+                                <h2 class="subtitle normal" style="margin-bottom: 0;">
                                     (outfit on that day)
                                 </h2>
+                                <h2 class="subtitle">
+                                    White smart casual
+                                </h2>
                                 <div class="columns">
-                                    <div class="column">
-                                        <div class="columns">
-                                            <div class="column">
-                                                WHITE<br/>
-                                                Smart Casual
-                                            </div>
-                                            <div class="column">
-                                                image
-                                            </div>
-                                        </div>
+                                    <div class="column" @mouseover="showVideo1 = true" @mouseleave="showVideo1 = false" style="min-height: 550px;">
+                                        <img src="@/assets/ootd/female1.jpeg" alt="female" v-if="!showVideo1" style="width: 400px; min-width: 400px;" />
+                                        <video v-if="showVideo1" style="width: 400px" autoplay>
+                                            <source src="@/assets/ootd/female1.mp4" type="video/mp4">
+                                            Your browser is not supported
+                                        </video>
                                     </div>
-                                    <div class="column">
-                                        Long image
+                                    <div class="column" @mouseover="showVideo2 = true" @mouseleave="showVideo2 = false" style="min-height: 550px;">
+                                        <img src="@/assets/ootd/men1.jpeg" alt="male" v-if="!showVideo2" style="width: 400px; min-width: 400px;" />
+                                        <video v-if="showVideo2" style="width: 400px" autoplay>
+                                            <source src="@/assets/ootd/men1.mp4" type="video/mp4">
+                                            Your browser is not supported
+                                        </video>
                                     </div>
-                                    <div class="column">
-                                        Long image
+                                    <div class="column" @mouseover="showVideo3 = true" @mouseleave="showVideo3 = false" style="min-height: 550px;">
+                                        <img src="@/assets/ootd/female2.jpeg" alt="female" v-if="!showVideo3" style="width: 400px; min-width: 400px;" />
+                                        <video v-if="showVideo3" style="width: 400px" autoplay>
+                                            <source src="@/assets/ootd/female2.mp4" type="video/mp4">
+                                            Your browser is not supported
+                                        </video>
                                     </div>
                                 </div>
                             </div>
@@ -76,23 +83,31 @@
             <section class="section">
                 <transition name="fade">
                     <div class="hero is-bold is-fullheight">
-                        <div class="hero-body" style="justify-content: center;">
-                            <GmapMap
-                                :center="{lat:14.6312494, lng:121.030342}"
-                                :zoom="18"
-                                map-type-id="terrain"
-                                style="width: 80vw; height: 80vh; align-items: center; justify-content: center;"
-                                class="is-flex"
-                                :options="mapOptions"
-                                >
-                                <GmapMarker
-                                    :position="google && new google.maps.LatLng(14.6312494, 121.030342)"
-                                    :clickable="true"
-                                    :draggable="false"
-                                    title="Romulo Cafe"
-                                    @click="redirectUrl"
-                                />
-                            </GmapMap>
+                        <div class="hero-body">
+                            <div class="container has-text-centered">
+                                <h1 class="title">
+                                    Location
+                                </h1>
+                                <h2 class="subtitle normal" style="margin-bottom: 0;">
+                                    (click pin to open google maps)
+                                </h2>
+                                <GmapMap
+                                    :center="{lat:14.6312494, lng:121.030342}"
+                                    :zoom="18"
+                                    map-type-id="terrain"
+                                    style="max-width: 90vw; height: 60vh; margin: 1rem auto 0 auto; align-items: center; justify-content: center; margin-top: 1rem;"
+                                    class="is-flex"
+                                    :options="mapOptions"
+                                    >
+                                    <GmapMarker
+                                        :position="google && new google.maps.LatLng(14.6312494, 121.030342)"
+                                        :clickable="true"
+                                        :draggable="false"
+                                        title="Romulo Cafe"
+                                        @click="redirectUrl"
+                                    />
+                                </GmapMap>
+                            </div>
                         </div>
                     </div>
                 </transition>
@@ -106,21 +121,15 @@
 <script>
 
     import $axios from 'axios';
-    import {FullPage} from 'vue-fullpage.js';
-    import SideScroll from '@/components/SideScroll';
     import {gmapApi} from 'vue2-google-maps';
 
     export default {
 
-        components: {
-
-            SideScroll,
-        },
         computed: {
 
             guest() {
 
-                return this.guests.find(g => g.id === parseInt(this.$route.params.id)) || {name: 'Guest'};
+                return this.guests.find(g => g.id === parseInt(this.$route.query.id)) || {name: 'Guest'};
             },
             google: gmapApi,
         },
@@ -132,9 +141,15 @@
                 isConfirmed: false,
                 isDeclined: false,
                 options: {
+
+                    licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
                     menu: '#menu',
                     anchors: ['hello', 'ootd', 'map'],
+                    scrollOverflow: true,
                 },
+                showVideo1: false,
+                showVideo2: false,
+                showVideo3: false,
                 guests: [
 
                     {
@@ -327,10 +342,6 @@
                 },
             };
         },
-        components: {
-
-            FullPage,
-        },
         methods: {
 
             redirectUrl() {
@@ -396,7 +407,7 @@
     }
     .title {
         font-family: 'Paduka Script';
-        font-size: 10rem;
+        font-size: 8rem;
         font-weight: 200;
         margin-bottom: 0;
     }
@@ -421,5 +432,43 @@
     .button {
         font-size: 2rem;
     }
+
+    @media (max-width: 1410px) {
+
+        .big-title {
+            font-size: 10rem;
+        }
+    }
+     /* // Large devices (desktops, less than 1200px) */
+    @media (max-width: 1199px) {}
+      /* // Medium devices (tablets, less than 992px) */
+    @media (max-width: 991px) {}
+     /* // Small devices (landscape phones, less than 768px) */
+    @media (max-width: 767px) {
+
+        .big-title {
+            font-size: 6rem;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 2rem;
+        }
+        .subtitle.normal {
+            font-size: 1.5rem;
+        }
+        .subtitle.mt-2 {
+            margin-top: 1rem;
+        }
+        .subtitle.smaller {
+            font-size: 1.5rem;
+        }
+        .button {
+            font-size: 1.5rem;
+        }
+    }
+    /* // Extra small devices (portrait phones, less than 576px) */
+    @media (max-width: 575px) {}
+
 </style>
 
