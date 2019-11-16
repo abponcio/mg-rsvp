@@ -18,7 +18,7 @@
                                     Mico & Grace
                                 </h1>
                                 <h3 class="subtitle smaller" style="margin-top: 1rem;">
-                                    invites you to a private gathering to celebrate our love
+                                    invites you to a private gathering to celebrate their love
                                 </h3>
                                 <h3 class="subtitle smaller">
                                     December 23, 2019 | 11:00 am <br/>
