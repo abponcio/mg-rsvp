@@ -285,6 +285,9 @@
                             "elementType": "labels.icon",
                             "stylers": [
                                 {
+                                    "saturation": -50,
+                                },
+                                {
                                     "visibility": "on"
                                 }
                             ]
