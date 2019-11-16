@@ -52,24 +52,24 @@
                                 <h2 class="subtitle">
                                     White smart casual
                                 </h2>
-                                <div class="columns">
+                                <div class="columns" style="flex-wrap: wrap">
                                     <div class="column" @mouseover="showVideo1 = true" @mouseleave="showVideo1 = false" style="min-height: 550px;">
-                                        <img src="@/assets/ootd/female1.jpeg" alt="female" v-if="!showVideo1" style="width: 400px; min-width: 400px;" />
-                                        <video v-if="showVideo1" style="width: 400px" autoplay>
+                                        <img src="@/assets/ootd/female1.jpeg" alt="female" v-if="!showVideo1" style="width: 100%; max-width: 400px;" />
+                                        <video v-if="showVideo1" style="width: 100%; max-width: 400px" autoplay>
                                             <source src="@/assets/ootd/female1.mp4" type="video/mp4">
                                             Your browser is not supported
                                         </video>
                                     </div>
                                     <div class="column" @mouseover="showVideo2 = true" @mouseleave="showVideo2 = false" style="min-height: 550px;">
-                                        <img src="@/assets/ootd/men1.jpeg" alt="male" v-if="!showVideo2" style="width: 400px; min-width: 400px;" />
-                                        <video v-if="showVideo2" style="width: 400px" autoplay>
+                                        <img src="@/assets/ootd/men1.jpeg" alt="male" v-if="!showVideo2" style="width: 100%; max-width: 400px;" />
+                                        <video v-if="showVideo2" style="width: 100%; max-width: 400px" autoplay>
                                             <source src="@/assets/ootd/men1.mp4" type="video/mp4">
                                             Your browser is not supported
                                         </video>
                                     </div>
                                     <div class="column" @mouseover="showVideo3 = true" @mouseleave="showVideo3 = false" style="min-height: 550px;">
-                                        <img src="@/assets/ootd/female2.jpeg" alt="female" v-if="!showVideo3" style="width: 400px; min-width: 400px;" />
-                                        <video v-if="showVideo3" style="width: 400px" autoplay>
+                                        <img src="@/assets/ootd/female2.jpeg" alt="female" v-if="!showVideo3" style="width: 100%; max-width: 400px;" />
+                                        <video v-if="showVideo3" style="width: 100%; max-width: 400px" autoplay>
                                             <source src="@/assets/ootd/female2.mp4" type="video/mp4">
                                             Your browser is not supported
                                         </video>
@@ -442,7 +442,12 @@
      /* // Large devices (desktops, less than 1200px) */
     @media (max-width: 1199px) {}
       /* // Medium devices (tablets, less than 992px) */
-    @media (max-width: 991px) {}
+    @media (max-width: 991px) {
+        .big-title {
+            font-size: 8rem;
+            margin-bottom: 1rem;
+        }
+    }
      /* // Small devices (landscape phones, less than 768px) */
     @media (max-width: 767px) {
 
@@ -468,7 +473,34 @@
         }
     }
     /* // Extra small devices (portrait phones, less than 576px) */
-    @media (max-width: 575px) {}
+    @media (max-width: 575px) {
+
+
+        .title {
+            font-size: 4.5rem;
+        }
+
+        .big-title {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+        }
+        .subtitle.normal {
+            font-size: 1.3rem;
+        }
+        .subtitle.mt-2 {
+            margin-top: 1rem;
+        }
+        .subtitle.smaller {
+            font-size: 1.3rem;
+        }
+        .button {
+            font-size: 1.5rem;
+        }
+    }
 
 </style>
 
