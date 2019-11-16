@@ -82,7 +82,7 @@
                                     :center="{lat:14.6312442, lng:121.0325307}"
                                     :zoom="18"
                                     map-type-id="terrain"
-                                    style="max-width: 100vw; height: 65vh; margin: 3rem auto -4rem;"
+                                    style="max-width: 100vw; height: 55vh; margin: 3rem auto 0;"
                                     :options="mapOptions"
                                     >
                                     <GmapMarker
@@ -93,6 +93,10 @@
                                         @click="redirectUrl"
                                     />
                                 </GmapMap>
+                                <div class="footer" style="padding-bottom: 1rem;">
+                                    Designed by the Bride.<br/>
+                                    Coded by the Husband.
+                                </div>
                             </div>
                         </div>
                     </div>
