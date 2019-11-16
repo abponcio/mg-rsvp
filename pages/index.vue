@@ -14,9 +14,6 @@
                     <div class="hero is-bold is-fullheight">
                         <div class="hero-body">
                             <div class="container has-text-centered">
-                                <h2 class="subtitle is-spaced">
-                                    Hello,
-                                </h2>
                                 <h1 class="title big-title is-spaced">
                                     Mico & Grace
                                 </h1>
@@ -29,7 +26,7 @@
                                     32 Dr. Scout Lazcano corner Scout Tuason Tomas Morato, Quezon City
                                 </h3>
 
-                                <a class="button is-success is-outlined" style="max-width: 100%; min-width: 260px; border-radius: 10px" href="#map">View map location</a>
+                                <a class="button is-success is-outlined" style="margin-top: 1.5rem; max-width: 100%; min-width: 260px; border-radius: 10px" href="#map">View map location</a>
                             </div>
                         </div>
                     </div>
