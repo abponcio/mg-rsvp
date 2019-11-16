@@ -26,7 +26,7 @@
                                     32 Dr. Scout Lazcano corner Scout Tuason Tomas Morato, Quezon City
                                 </h3>
 
-                                <a class="button is-success is-outlined" style="margin-top: 1.5rem; max-width: 100%; min-width: 260px; border-radius: 10px" href="#map">View map location</a>
+                                <a class="button is-success is-outlined" style="margin-top: 1.5rem; max-width: 100%; min-width: 260px; border-radius: 10px" href="#map">View map</a>
                             </div>
                         </div>
                     </div>
