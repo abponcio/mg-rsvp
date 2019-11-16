@@ -2,7 +2,7 @@
 
     <div :class="{'is-hidden': this.$nuxt.$loading.loading}">
         <full-page ref="fullpage" id="fullpage" :options="options">
-            <section class="section is-relative">
+            <section class="section is-relative fp-auto-height-responsive">
                 <img class="bottom-leaves" src="@/assets/home/top-left-below-leaves.png" alt="Bottom Leaves"/>
                 <img class="top-leaves" src="@/assets/home/top-left-above-leaves.png" alt="Top Leaves"/>
                 <img class="left-splatter" src="@/assets/home/left-splatter.png" alt="Left Splatter"/>
@@ -38,7 +38,7 @@
                     </div>
                 </transition>
             </section>
-            <section class="section">
+            <section class="section fp-auto-height-responsive">
                 <transition name="fade">
                     <div class="hero is-bold is-fullheight">
                         <div class="hero-body">
@@ -80,7 +80,7 @@
                     </div>
                 </transition>
             </section>
-            <section class="section">
+            <section class="section fp-auto-height-responsive">
                 <transition name="fade">
                     <div class="hero is-bold is-fullheight">
                         <div class="hero-body">
@@ -145,9 +145,9 @@
                     licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
                     menu: '#menu',
                     anchors: ['hello', 'ootd', 'map'],
-                    scrollOverflow: true,
                     responsiveWidth: 768,
                     lazyLoading: true,
+                    css3: true,
                 },
                 showVideo1: false,
                 showVideo2: false,
@@ -474,6 +474,9 @@
         }
         .button {
             font-size: 1.5rem;
+        }
+        .top-splatter {
+            display: none;
         }
     }
     /* // Extra small devices (portrait phones, less than 576px) */
