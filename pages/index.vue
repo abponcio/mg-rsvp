@@ -399,7 +399,7 @@
     }
     .title {
         font-family: 'Paduka Script';
-        font-size: 8rem;
+        font-size: 9rem;
         font-weight: 200;
         margin-bottom: 0;
     }
