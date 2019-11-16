@@ -10,6 +10,5 @@
     "routes": [
       { "src": "/_nuxt/.+", "headers": { "cache-control": "s-maxage=31536000" } },
       { "src": "/(.*)", "dest": "/" },
-      { "src": "/static/favicon.ico", "dest": "/favicon.ico" }
     ]
   }
