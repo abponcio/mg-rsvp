@@ -94,8 +94,7 @@
                                     />
                                 </GmapMap>
                                 <div class="footer" style="padding-bottom: 1rem;">
-                                    Designed by the Bride.<br/>
-                                    Coded by the Husband.
+                                    <strong>Designed by the Bride. Developed by the Husband.</strong>
                                 </div>
                             </div>
                         </div>
