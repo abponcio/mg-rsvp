@@ -1,7 +1,7 @@
 {
   "name": "wedding-rsvp",
   "version": "1.0.0",
-  "description": "Wedding Rsvp",
+  "description": "A private gathering to celebrate their love",
   "author": "Mico",
   "private": true,
   "scripts": {
