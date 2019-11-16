@@ -49,14 +49,14 @@
                                 <div class="columns ootd-list" style="flex-wrap: wrap; justify-content: center;">
                                     <div class="column is-4" @mouseover="showVideo2 = true" @mouseleave="showVideo2 = false">
                                         <img src="@/assets/ootd/men1.jpeg" alt="male" v-if="!showVideo2" style="width: 100%; max-width: 400px;" />
-                                        <video v-if="showVideo2" style="width: 100%; max-width: 400px" autoplay loop>
+                                        <video v-if="showVideo2" style="width: 100%; max-width: 400px" poster="/men1.jpeg" autoplay loop>
                                             <source src="@/assets/ootd/men1.mp4" type="video/mp4">
                                             Your browser is not supported
                                         </video>
                                     </div>
                                     <div class="column is-4" @mouseover="showVideo3 = true" @mouseleave="showVideo3 = false">
                                         <img src="@/assets/ootd/female2.jpeg" alt="female" v-if="!showVideo3" style="width: 100%; max-width: 400px;" />
-                                        <video v-if="showVideo3" style="width: 100%; max-width: 400px" autoplay loop>
+                                        <video v-if="showVideo3" style="width: 100%; max-width: 400px" poster="/female2.jpeg" autoplay loop>
                                             <source src="@/assets/ootd/female2.mp4" type="video/mp4">
                                             Your browser is not supported
                                         </video>
@@ -79,15 +79,14 @@
                                     (click pin to open google maps)
                                 </h2>
                                 <GmapMap
-                                    :center="{lat:14.6312494, lng:121.030342}"
+                                    :center="{lat:14.6312442, lng:121.0325307}"
                                     :zoom="18"
                                     map-type-id="terrain"
-                                    style="max-width: 100vw; height: 60vh; margin: 1rem auto 0 auto; align-items: center; justify-content: center; margin-top: 1rem;"
-                                    class="is-flex"
+                                    style="max-width: 100vw; height: 65vh; margin: 3rem auto -4rem;"
                                     :options="mapOptions"
                                     >
                                     <GmapMarker
-                                        :position="google && new google.maps.LatLng(14.6312494, 121.030342)"
+                                        :position="google && new google.maps.LatLng(14.6312442, 121.0325307)"
                                         :clickable="true"
                                         :draggable="false"
                                         title="Romulo Cafe"
@@ -134,7 +133,6 @@
                     anchors: ['hello', 'ootd', 'map'],
                     responsiveWidth: 768,
                     lazyLoading: true,
-                    css3: true,
                 },
                 showVideo1: false,
                 showVideo2: false,
