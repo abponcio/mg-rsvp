@@ -342,6 +342,10 @@
                 window.open("https://www.google.com/maps/place/Romulo+Caf%C3%A9/@14.6312494,121.030342,17z/data=!3m1!4b1!4m5!3m4!1s0x3397b64cd960c71b:0x9373558dba39b804!8m2!3d14.6312442!4d121.0325307", "_blank");
             },
         },
+        mounted() {
+
+            this.$refs.fullpage.click();
+        },
         transition: 'fade',
     };
 </script>
