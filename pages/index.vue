@@ -47,16 +47,16 @@
                                     White smart casual
                                 </h2>
                                 <div class="columns ootd-list" style="flex-wrap: wrap; justify-content: center;">
-                                    <div class="column is-4" @mouseover="showVideo2 = true" @mouseleave="showVideo2 = false">
-                                        <img src="@/assets/ootd/men1.jpeg" alt="male" v-if="!showVideo2" style="width: 100%; max-width: 400px;" />
-                                        <video v-show="showVideo2" style="width: 100%; max-width: 400px" poster="/men1.jpeg" autoplay loop>
+                                    <div class="column is-4" @mouseover="$refs.vid1.play();" @mouseleave="$refs.vid1.load();">
+                                        <!-- <img src="@/assets/ootd/men1.jpeg" alt="male" v-show="!showVideo2" style="width: 100%; max-width: 400px;" /> -->
+                                        <video ref="vid1" style="width: 100%; max-width: 400px" poster="/men1.jpeg" loop>
                                             <source src="@/assets/ootd/men1.mp4" type="video/mp4">
                                             Your browser is not supported
                                         </video>
                                     </div>
-                                    <div class="column is-4" @mouseover="showVideo3 = true" @mouseleave="showVideo3 = false">
-                                        <img src="@/assets/ootd/female2.jpeg" alt="female" v-if="!showVideo3" style="width: 100%; max-width: 400px;" />
-                                        <video v-show="showVideo3" style="width: 100%; max-width: 400px" poster="/female2.jpeg" autoplay loop>
+                                    <div class="column is-4" @mouseover="$refs.vid2.play();" @mouseleave="$refs.vid2.load();">
+                                        <!-- <img src="@/assets/ootd/female2.jpeg" alt="female" v-show="!showVideo3" style="width: 100%; max-width: 400px;" /> -->
+                                        <video ref="vid2" style="width: 100%; max-width: 400px" poster="/female2.jpeg" loop>
                                             <source src="@/assets/ootd/female2.mp4" type="video/mp4">
                                             Your browser is not supported
                                         </video>
